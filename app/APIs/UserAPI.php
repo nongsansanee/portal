@@ -217,7 +217,7 @@ class UserAPI implements UserAPIContract
         return [
             'ok' => true,
             'found' => true,
-            'login' => $response['AccountName'],
+            'login' => explode('@', $response['AccountName'])[0] ,
             'status' => strtolower($response['Status']),
         ];
     }
